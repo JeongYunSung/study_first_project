@@ -1,0 +1,45 @@
+= API Document
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
+:snippets: ../../../build/generated-snippets
+
+[[introduction]]
+== 소개
+
+회원과 팀 API
+
+=== Domain
+
+|===
+| 환경 | Domain
+
+| 개발서버
+| `http://localhost:8080`
+
+| 운영서버
+| `아직없음`
+|===
+
+== 회원 API
+
+&#160;
+
+[[member-list]]
+
+=== Request
+
+include::{snippets}/member-list/request-body.adoc[]
+
+include::{snippets}/member-list/request-parameters.adoc[]
+
+=== Response
+
+include::{snippets}/member-list/response-fields.adoc[]
+
+include::{snippets}/member-list/response-body.adoc[]
+
+&#160;
