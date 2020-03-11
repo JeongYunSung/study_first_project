@@ -20,7 +20,7 @@ build/
 *.iml
 *.ipr
 out/
-application-rael-db.yml
+application-real-db.yml
 
 ### NetBeans ###
 /nbproject/private/
