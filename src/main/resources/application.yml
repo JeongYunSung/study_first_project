@@ -1,7 +1,7 @@
 spring:
   profiles:
     active: real
-    include: read-db
+    include: real-db
 
   jackson:
     deserialization:
