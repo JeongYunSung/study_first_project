@@ -1,24 +1,20 @@
 spring:
   profiles:
-    active: dev
+    active: real
 
   jackson:
     deserialization:
       fail-on-unknown-properties: true # 역직렬화 하는과정에서 필요없는 값이 있다면 에러를 내보낸다
 
   datasource:
-    url: jdbc:h2:tcp://localhost/~/firstporject
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mariadb://jys-db-1.cdqfawu1zqg7.ap-northeast-2.rds.amazonaws.com:3306/jys_springboot
+    username: jys
+    password: sjop6390
+    driver-class-name: org.mariadb.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
       use-new-id-generator-mappings: false
+      dialect: MySQL5InnoDBDialect:org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
-
-logging:
-  level:
-    org.hibernate.SQL: debug
-    org.hibernate.type: trace
