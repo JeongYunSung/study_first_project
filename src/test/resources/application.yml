@@ -11,8 +11,6 @@ spring:
     hibernate:
       ddl-auto: none
       use-new-id-generator-mappings: false
-      dialect: MySQL5InnoDBDialect:org.hibernate.dialect.MySQL5InnoDBDialect
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
     show-sql: true
-    
-    #test
