@@ -1,7 +1,6 @@
 spring:
   profiles:
     active: test
-    include: real-db
 
   datasource:
     url: jdbc:h2:mem:testdb
