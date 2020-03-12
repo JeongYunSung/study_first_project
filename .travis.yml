@@ -38,7 +38,7 @@ deploy:
     key: jys-project-webservice.zip
     bundle_type: zip
     application: jys_project
-    deployment_group: jys-project-webservice-group
+    deployment_group: jys-project-group
     region: ap-northeast-2
     wait-until-deployed: true
 
