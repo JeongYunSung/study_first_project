@@ -1,6 +1,5 @@
 spring:
   profiles:
-    active: real
     include: real-db
 
   jackson:
