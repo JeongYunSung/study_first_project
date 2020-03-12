@@ -5,7 +5,7 @@ project_name=jys-firstproject-webservice
 
 echo "> Build파일 복사"
 
-cp $repository/zip*.jar $repository/
+cp $repository/zip/*.jar $repository/
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"
 
