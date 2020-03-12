@@ -46,6 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
+        web.ignoring().mvcMatchers("/profile");
         web.ignoring().mvcMatchers("/docs/index.html");
         web.ignoring().mvcMatchers(PathRequest.toStaticResources().atCommonLocations().toString());
     }
