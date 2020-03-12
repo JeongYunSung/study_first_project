@@ -9,7 +9,7 @@ cp $repository/zip/*.jar $repository/
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"
 
-current_pid=$(pgrep -fl {project_name} | grep jar | awk '{print $1}')
+current_pid=$(pgrep -fl $project_name | grep jar | awk '{print $1}')
 
 echo "현재 구동중인 애플리케이션 pid: $current_pid"
 
@@ -33,4 +33,4 @@ chmod +x $jar_name
 
 echo "> $jar_name 실행"
 
-nohup java -jar -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-real-db.yml $repository/$jar_name 2>&1 &
+nohup java -jar -Dspring.config.location=classpath:/application.yml,/home/ec2-user/app/application-real-db.yml $jar_name 2>&1 &
