@@ -36,11 +36,11 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: jys-project-build
+    region: ap-northeast-2
     key: jys-firstproject-webservice.zip
     bundle_type: zip
     application: jys_project
     deployment_group: jys-project-group
-    region: ap-northeast-2
     wait-until-deployed: true
 
 notifications:
