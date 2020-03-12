@@ -17,7 +17,7 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r jys_first_project
+  - zip -r jys_first_project *
   - mkdir -p deploy
   - mv jys_first_project.zip deploy/jys_first_project.zip
 
