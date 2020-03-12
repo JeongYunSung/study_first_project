@@ -41,7 +41,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
     bucket: jys-project-build
     region: ap-northeast-2
-    key: jys-firstproject-webservice.zip
+    key: jys_first_project.zip
     bundle_type: zip
     application: jys_project
     deployment_group: jys-project-group
