@@ -16,6 +16,25 @@ before_install:
 
 script: "./gradlew clean build"
 
+before_deploy:
+  - zip -r jys_first_project
+  - mkdir -p deploy
+  - mv jys_first_project.zip deploy/jys_first_project.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+    bucket: jys_project-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: depoly
+    wait-until-deployed: true
+
+
+
 notifications:
   email:
     recipients:
