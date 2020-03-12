@@ -4,6 +4,8 @@ import com.google.common.net.HttpHeaders;
 import com.yunseong.first_project.config.RestDocConfig;
 import com.yunseong.first_project.domain.Member;
 import com.yunseong.first_project.domain.Team;
+import com.yunseong.first_project.repository.MemberRepository;
+import com.yunseong.first_project.repository.TeamRepository;
 import com.yunseong.first_project.service.MemberService;
 import com.yunseong.first_project.service.TeamService;
 import org.junit.jupiter.api.Test;
@@ -18,6 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.common.util.Jackson2JsonParser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
@@ -38,21 +41,22 @@ public class MemberControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private MemberService memberService;
+    private MemberRepository memberRepository;
 
     @Autowired
-    private TeamService teamService;
+    private TeamRepository teamRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Test
+    @Transactional
     public void getMember() throws Exception{
         //given
         Team t = new Team("teamname");
-        this.teamService.save(t);
+        this.teamRepository.save(t);
         Member m = new Member("username", "nickname", this.passwordEncoder.encode("password"), t);
-        this.memberService.save(m);
+        this.memberRepository.save(m);
         ResultActions oauth = this.mockMvc.perform(post("/oauth/token")
                 .with(httpBasic("myApp", "pass"))
                 .param("username", "username")
