@@ -6,11 +6,11 @@ spring:
     deserialization:
       fail-on-unknown-properties: true # 역직렬화 하는과정에서 필요없는 값이 있다면 에러를 내보낸다
 
-  datasource:
-    url: jdbc:h2:tcp://localhost/~/firstporject
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/firstporject
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
