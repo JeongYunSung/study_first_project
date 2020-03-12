@@ -4,8 +4,6 @@ import com.google.common.net.HttpHeaders;
 import com.yunseong.first_project.config.RestDocConfig;
 import com.yunseong.first_project.domain.Member;
 import com.yunseong.first_project.domain.Team;
-import com.yunseong.first_project.repository.MemberRepository;
-import com.yunseong.first_project.repository.TeamRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
